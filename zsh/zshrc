@@ -129,6 +129,10 @@ function update-tmux
         export DISPLAY=`cat ~/.display.txt`
     fi
 }
+#tmuxinator completion
+#if [ -f ~/tmuxinator/completion/tmuxinator.zsh ]; then
+      #source ~/tmuxinator/completion/tmuxinator.zsh
+#fi
 
 bindkey "^[[1~" vi-beginning-of-line   # Home
 bindkey "^[[4~" vi-end-of-line         # End
