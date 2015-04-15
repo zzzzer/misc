@@ -55,9 +55,6 @@ source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-# bind UP and DOWN arrow keys
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
 #tab moves forward. =>  shift tab => backwords 
 bindkey '^[[Z' reverse-menu-complete
@@ -116,6 +113,10 @@ function gvim () {
 ~/vim/7.4.340/bin/gvim $@ &
 }
 
+function gitdiff () {
+git difftool -y $2:$1 $3:$1
+}
+
 shell () {
   ps | grep `echo $$` | awk '{ print $4 }'
 }
@@ -165,6 +166,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+# bind UP and DOWN arrow keys
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
