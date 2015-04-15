@@ -48,6 +48,7 @@ ZSH_THEME="ys"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git vi-mode dircycle colored-man zsh-syntax-highlighting)
 
+
 #search 
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 
