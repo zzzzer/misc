@@ -46,7 +46,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode dircycle colored-man zsh-syntax-highlighting)
+plugins=(git git-extras vi-mode dircycle colored-man zsh-syntax-highlighting)
 
 
 #search 
@@ -108,6 +108,10 @@ function extract () {
     else
         echo "'$1' is not a valid file"
     fi
+}
+
+function module () {
+ eval `/app/modules/0/bin/modulecmd bash "$@"`
 }
 
 function gvim () {
