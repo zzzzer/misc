@@ -8,6 +8,8 @@ This plugin hopefully makes them more available and "more standard".
 Thanks to the Tmux community for "inventing" these bindings. I've merely just
 copied them here.
 
+Tested and working on Linux, OSX and Cygwin.
+
 ### Bindings
 
 Notice most of the bindings emulate vim cursor movements.
@@ -16,13 +18,13 @@ Notice most of the bindings emulate vim cursor movements.
 
 **Navigation**
 
-- `prefix + h`<br/>
+- `prefix + h` and `prefix + C-h`<br/>
   select pane on the left
-- `prefix + j`<br/>
+- `prefix + j` and `prefix + C-j`<br/>
   select pane below the current one
-- `prefix + k`<br/>
+- `prefix + k` and `prefix + C-k`<br/>
   select pane above
-- `prefix + l`<br/>
+- `prefix + l` and `prefix + C-l`<br/>
   select pane on the right
 
 <br/>
@@ -76,10 +78,7 @@ Newly created pane always has the same path as the original pane.
 
 Add plugin to the list of TPM plugins in `.tmux.conf`:
 
-    set -g @tpm_plugins "                \
-      tmux-plugins/tpm                   \
-      tmux-plugins/tmux-pain-control     \
-    "
+    set -g @plugin 'tmux-plugins/tmux-pain-control'
 
 Hit `prefix + I` to fetch the plugin and source it.
 

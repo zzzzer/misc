@@ -25,6 +25,8 @@ thing manually each time:
 
 Requirements: `tmux 1.9` or higher, `tree` recommended but not required
 
+Tested and working on Linux, OSX and Cygwin.
+
 ### Key bindings
 
 - `prefix + Tab` - toggle sidebar with a directory tree
@@ -34,10 +36,7 @@ Requirements: `tmux 1.9` or higher, `tree` recommended but not required
 
 Add plugin to the list of TPM plugins in `.tmux.conf`:
 
-    set -g @tpm_plugins '          \
-      tmux-plugins/tpm             \
-      tmux-plugins/tmux-sidebar    \
-    '
+    set -g @plugin 'tmux-plugins/tmux-sidebar'
 
 Hit `prefix + I` to fetch the plugin and source it. You should now be able to
 use the plugin.
@@ -59,36 +58,9 @@ Reload TMUX environment:
 
 You should now be able to use the plugin.
 
-### Options
+### Docs
 
-Customize `tmux-sidebar` by placing options in `.tmux.conf` and reloading Tmux
-environment.
-
-> How can I run some other command in the sidebar?
-
-    set -g @sidebar-tree-command 'ls -1'
-
-> Can I have the sidebar on the right?
-
-    set -g @sidebar-tree-position 'right'
-
-> I don't like the default 'prefix + Tab' key binding. Can I change it to be
-'prefix + e'?
-
-    set -g @sidebar-tree 'e'
-
-> How can I change the default 'prefix + Backspace' to be 'prefix + w'?
-
-    set -g @sidebar-tree-focus 'w'
-
-> I see the tree sidebar uses 'less' as a pager. I would like to use 'view'.
-
-    set -g @sidebar-tree-pager 'view -'
-
-> The default sidebar width is 40 columns. I want the sidebar to be wider by
-default!
-
-    set -g @sidebar-tree-width '60'
+- [customization options](docs/options.md)
 
 ### Other goodies
 
