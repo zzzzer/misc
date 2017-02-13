@@ -1,0 +1,12 @@
+PS1='\[\033[01;32m\]\u\[\033[01;34m\]::\[\033[01;31m\]\h \[\033[00;34m\]{ \[\033[01;34m\]\w \[\033[00;34m\]}\[\033[01;32m\]-> \[\033[00m\]'
+source ~/.bash_aliases
+source /home/eashmia/modules/define_modules
+source /proj/westcoastasic/setup/define_modules
+export IGNOREEOF=40 #
+#unset -f setenv
+echo $DISPLAY > ~/.display.txt
+bind -f ~/.inputrc
+#eval "$(register-python-argcomplete run.py)"
+source ~/.fzf.bash
+[ -z "$TMUX" ] && export TERM=xterm-256color
+

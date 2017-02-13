@@ -115,7 +115,7 @@ function module () {
 }
 
 function gvim () {
-~/vim/7.4.340/bin/gvim $@ &
+~/vim/v8/bin/gvim $@ &
 }
 
 function gitdiff () {
