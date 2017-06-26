@@ -75,9 +75,8 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
 source ~/.bash_aliases
-#already souced in inital shell 
+source /gsl/cad/modules/init/zsh
 #source /home/eashmia/modules/define_modules
-#source /proj/westcoastasic/setup/define_modules
 export IGNOREEOF=40 #
 
 #some scripts being sourced use setenv 
@@ -110,13 +109,10 @@ function extract () {
     fi
 }
 
-function module () {
- eval `/app/modules/0/bin/modulecmd bash "$@"`
-}
+#function module () {
+ #eval `/app/modules/0/bin/modulecmd bash "$@"`
+#}
 
-function gvim () {
-~/vim/v8/bin/gvim $@ &
-}
 
 function gitdiff () {
 git difftool -y $2:$1 $3:$1

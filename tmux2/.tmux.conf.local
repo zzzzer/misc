@@ -114,6 +114,7 @@ tmux_conf_new_session_prompt=false
 # ------------------------------------------------------------------------------
 # this is the place to further customize tmux's configuration
 
+set -g mouse on
 #set -g history-limit 10000
 #pane dividers 
 set -g pane-border-fg green
@@ -121,6 +122,9 @@ set -g pane-border-bg black
 set -g pane-active-border-fg white
 set -g pane-active-border-bg yellow
 
+#disable renames of windows and tabs 
+set-window-option -g automatic-rename off
+set-option -g allow-rename off
 
 #vim and tmux 
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
@@ -130,19 +134,18 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq v
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys 'C-\\') || tmux select-pane -l"
 
 #tmux plugin manager 
-
-set -g @sidebar-tree 'v'
+#set -g @sidebar-tree 'v'
 
 set -g @tpm_plugins '              \
   tmux-plugins/tpm                 \
-  tmux-plugins/tmux-sensible       \
-  tmux-plugins/tmux-yank           \
-  tmux-plugins/tmux-copycat        \
-  tmux-plugins/tmux-open           \
-  tmux-plugins/tmux-pain-control   \
-  tmux-plugins/tmux-sidebar        \
   tmux-plugins/tmux-resurrect      \
 '
+#  tmux-plugins/tmux-sensible       \
+#  tmux-plugins/tmux-yank           \
+#  tmux-plugins/tmux-copycat        \
+#  tmux-plugins/tmux-open           \
+#  tmux-plugins/tmux-pain-control   \
+#  tmux-plugins/tmux-sidebar        \
 # Other examples:
 # github_username/plugin_name    \
 # git@github.com/user/plugin     \
@@ -150,4 +153,7 @@ set -g @tpm_plugins '              \
 
 # Initializes TMUX plugin manager.
 # Keep this line at the very bottom of tmux.conf.
-run-shell '~/.tmux/plugins/tpm/tpm'
+if "test ! -d ~/.tmux/plugins/tpm" \
+   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
+run '~/.tmux/plugins/tpm/tpm'
+
