@@ -139,6 +139,7 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iq v
 set -g @tpm_plugins '              \
   tmux-plugins/tpm                 \
   tmux-plugins/tmux-resurrect      \
+  tmux-plugins/tmux-open           \
 '
 #  tmux-plugins/tmux-sensible       \
 #  tmux-plugins/tmux-yank           \
