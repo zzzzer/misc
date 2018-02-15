@@ -75,8 +75,7 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
 source ~/.bash_aliases
-source /gsl/cad/modules/init/zsh
-#source /home/eashmia/modules/define_modules
+source /home/eashmia/modules/define_modules
 export IGNOREEOF=40 #
 
 #some scripts being sourced use setenv 
@@ -109,9 +108,9 @@ function extract () {
     fi
 }
 
-#function module () {
- #eval `/app/modules/0/bin/modulecmd bash "$@"`
-#}
+function module () {
+ eval `/app/modules/0/bin/modulecmd bash "$@"`
+}
 
 
 function gitdiff () {
@@ -131,6 +130,24 @@ function update-tmux
         export DISPLAY=`cat ~/.display.txt`
     fi
 }
+function epsee_vim {
+ export PYTHONPATH=$PYTHONPATH:`readlink -f bin/epsee`:`readlink -f lib`:`readlink -f utils`
+}
+
+#Eda stuff
+#
+function license_vcs {
+ lmstat -c /env/seln/hub/licenses/synopsys/license.dat -a | less
+}
+
+function license_questa {
+ lmstat -c /env/seki/hub/licenses/mentor/license.dat -f msimhdlsim  | less
+}
+
+function license_questa_sort {
+ lmstat -c /env/seki/hub/licenses/mentor/license.dat -f msimhdlsim | grep -A400 Users | sed "1,5 d" | awk '{print $1}' | sort | uniq -c | sort -r
+}
+
 #tmuxinator completion
 #if [ -f ~/tmuxinator/completion/tmuxinator.zsh ]; then
       #source ~/tmuxinator/completion/tmuxinator.zsh
