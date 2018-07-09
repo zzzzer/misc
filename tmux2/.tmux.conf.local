@@ -3,15 +3,15 @@
 # use the powerline patched font variant of the theme, possible values are:
 #   - default
 #   - powerline
-tmux_conf_theme=default
-#tmux_conf_theme=powerline
+#tmux_conf_theme=default
+tmux_conf_theme=powerline
 
 # display an indicator in the status line when the prefix key has been pressed,
 # possible values are:
 #   - enabled
 #   - disabled
-tmux_conf_theme_prefix=disabled
-#tmux_conf_theme_prefix=enabled
+#tmux_conf_theme_prefix=disabled
+tmux_conf_theme_prefix=enabled
 
 # display the battery information in the status line, possible values are:
 #   - enabled
@@ -82,8 +82,8 @@ tmux_conf_theme_hostname=enabled
 # highlight focuse pane, possible values are:
 #   - enabled
 #   - disabled
-tmux_conf_theme_highlight_focused_pane=disabled
-#tmux_conf_theme_highlight_focused_pane=enabled
+#tmux_conf_theme_highlight_focused_pane=disabled
+tmux_conf_theme_highlight_focused_pane=enabled
 
 # should new windows retain current path, possible values are:
 #   - true

@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
+fpath=(~/cd-gitroot/(N-/) $fpath)
+autoload -Uz cd-gitroot
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -147,6 +148,12 @@ function license_questa {
 function license_questa_sort {
  lmstat -c /env/seki/hub/licenses/mentor/license.dat -f msimhdlsim | grep -A400 Users | sed "1,5 d" | awk '{print $1}' | sort | uniq -c | sort -r
 }
+
+function find_old {
+
+echo "find . -maxdepth 4 -mindepth 3 -type d -mtime +60" 
+}
+
 
 #tmuxinator completion
 #if [ -f ~/tmuxinator/completion/tmuxinator.zsh ]; then
